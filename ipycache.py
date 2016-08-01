@@ -35,7 +35,10 @@ if PY3:
     
     exec_ = getattr(builtins, "exec")
 else:
-    import cPickle as pickle
+    try:
+        import cPickle as pickle
+    except:
+        import pickle
     from StringIO import StringIO        
     _iteritems = "iteritems"
 
